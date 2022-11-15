@@ -131,8 +131,8 @@ export default {
     login() {
       if (this.userName !== "" && this.password !== "") {
         // 利用缓存存放用户信息
-        this.$store.commit("setLoginIn", true);
-        console.log(this.$store.state.user.loginIn)
+        this.$store.dispatch("user/setLoginIn", true);
+        console.log(this.$store.getters.loginIn)
         // this.$store.commit("setUsername", userName);
         alert("登陆成功");
         this.$router.push({path:'/'});
